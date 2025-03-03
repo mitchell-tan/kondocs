@@ -1,0 +1,31 @@
+---
+title: "Setting up webhooks"
+description: "Description of your new file."
+---
+
+<Info>
+  Note that webhooks are in beta and will be launched as part of our new Business Tier in mid-March
+</Info>
+
+You can push data on your LinkedIn conversations from Kondo to your own systems using webhooks.
+
+To set up webhooks, simply go to [app.trykondo.com/webhooks](http://app.trykondo.com/webhooks)
+
+### When we post data
+
+There are two ways to trigger events posting to your webhook destination.
+
+1. Streaming — selecting ‘general-update’ will fire events every time a change happens in Kondo e.g. receive new message, send new message, archive, change label, change notes, etc. etc.
+
+2. Manual — unselect 'general-update' to only fire events when you manually select conversations and sync
+
+
+
+
+   After you create your first webhook destination, you will see a sync ⚡ button at the top of each chat or when selecting conversations in the inbox with the checkboxes&#x9;
+
+3. ![](/CleanShot2025-03-03at18.55.52.png)
+
+### What kind of data we post
+
+You can see a sample of the data we post in [app.trykondo.com/webhooks/new](http://app.trykondo.com/webhooks/new)
