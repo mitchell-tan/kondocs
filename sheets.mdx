@@ -3,11 +3,11 @@ title: "Google Sheets"
 description: "Description of your new file."
 ---
 
-### Create a new Apps Script in Google Sheets
+### Step 1: Create a new Apps Script in Google Sheets
 
 ![](/CleanShot2025-03-03at19.02.23.png)
 
-### Paste this script
+### Step 2: Paste this script
 
 ```javascript Kondo Google Sheets Apps Script
 /** @OnlyCurrentDoc */  
@@ -202,7 +202,7 @@ function doPost(e) {
 }
 ```
 
-### Deploy the script
+### Step 3: Deploy the script
 
 * Click deploy, and select type Web app
 
@@ -212,13 +212,13 @@ function doPost(e) {
 
 ![](/CleanShot2025-03-03at19.05.39.png)
 
-### Refresh and activate
+### Step 4: Refresh and activate
 
 Go back to your Google Sheet and <u>refresh the page</u>. You will see a new button 'Kondo Webhook'. Click Activate
 
 ![](/CleanShot2025-03-03at19.07.17.png)
 
-### Paste the webhook destination in Kondo
+### Step 5: Paste the webhook destination in Kondo
 
 Go to [https://app.trykondo.com/webhooks/new](https://app.trykondo.com/webhooks/new) and paste the URL you copied from the Apps Script
 
@@ -230,7 +230,7 @@ Select your update preferences
 
 Click "test then save"
 
-### Manually trigger a sync&#x20;
+### Step 6: Manually trigger a sync&#x20;
 
 Once you have at least 1 destination set up, you can trigger a sync by selecting a few rows and clicking the ⚡ button or with Cmd + K > Sync
 
