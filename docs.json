@@ -14,9 +14,9 @@
   }, 
   "navigation": {
     "pages": [
-        "essentials/images",
-        "essentials/markdown"
-      ]    
+      "quickstart",
+      "introduction",
+    ]
   },
     "global": {
       "anchors": [
