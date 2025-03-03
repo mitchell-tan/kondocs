@@ -13,11 +13,11 @@
     "strict": true
   }, 
   "navigation": {
+    "pages":start-here,
     "groups": [
     {
       "group": "Getting Started",
       "pages": [
-        "start-here",
         "getting-started/change-login",
         "getting-started/sharing-access"    
         ]
