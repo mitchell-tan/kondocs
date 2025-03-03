@@ -3,7 +3,7 @@
   "theme": "mint",
   "name": "Kondo Docs",
   "colors": {
-    "primary": "#e8ff3d",
+    "primary": "#111111",
     "light": "#FFFFFF",
     "dark": "#000000"
   },
