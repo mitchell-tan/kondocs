@@ -37,6 +37,13 @@
         "archive",
         "cleanup"
       ]
+    },
+    {
+      "group": "Labelling",
+      "pages": [
+        "label-icons",
+        "multiple-labels"
+      ]
     } 
     ]
   },
