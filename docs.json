@@ -13,9 +13,15 @@
     "strict": true
   }, 
   "navigation": {
-    "pages": [
-      "quickstart",
-      "introduction"
+    "groups": [
+    {
+      "group": "Getting Started"
+      "pages": [
+        "quickstart",
+        "getting-started/change-login",
+        "getting-started/sharing-access"
+      ]
+    }
     ]
   },
     "global": {
