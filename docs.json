@@ -42,6 +42,7 @@
     "dark": "/logo/dark.svg"
   },
   "navbar": {
+    "name": "Docs",
     "links": [
       {
         "label": "Support",
@@ -50,8 +51,8 @@
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Back to Kondo",
+      "href": "https://app.trykondo.com"
     }
   },
   "footer": {
