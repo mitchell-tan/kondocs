@@ -44,7 +44,16 @@
         "label-icons",
         "multiple-labels"
       ]
-    } 
+    },
+    {
+      "group": "Integrations",
+      "pages": [
+        "webhooks",
+        "zapier",
+        "notion",
+        "sheets"
+      ]
+    }
     ]
   },
   "logo": {

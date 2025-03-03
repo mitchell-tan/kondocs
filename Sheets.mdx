@@ -1,0 +1,239 @@
+---
+title: "Google Sheets"
+description: "Description of your new file."
+---
+
+### Create a new Apps Script in Google Sheets
+
+![](/CleanShot2025-03-03at19.02.23.png)
+
+### Paste this script
+
+```javascript Kondo Google Sheets Apps Script
+/** @OnlyCurrentDoc */  
+function onOpen(e) {
+  const store = PropertiesService.getScriptProperties();
+  const permissive = store.getProperty('permission');
+
+  if (!permissive) {
+    return addMenuAuth();
+  }
+
+  if (getWebhookUrl() !== "__WEBHOOK_URL__") {
+    return addMenuConnect();
+  }
+}
+
+function openAuthPrompt() {
+  // Dummy call to check permissions
+  UrlFetchApp.fetch("https://www.google.com");
+
+  // Clear the menu items
+  const sheet = SpreadsheetApp.getActiveSpreadsheet();
+  sheet.removeMenu("Kondo Webhook");
+
+  // Add the menu items
+  if (getWebhookUrl() !== "__WEBHOOK_URL__") {
+    addMenuConnect();
+  }
+  
+  // Mark and show the permission has been granted
+  const store = PropertiesService.getScriptProperties();
+  store.setProperty('permission', "granted");
+  openSuccessPrompt();
+}
+
+function openConnectPrompt(e) {
+  const webhookUrl = getWebhookUrl();
+  const url = "https://kondo-beta.pages.dev/webhooks/new?url=" + encodeURIComponent(webhookUrl);
+  const html = HtmlService.createHtmlOutput(
+    '<html><script>' +
+    'window.open("' + url + '", "_blank");' +
+    'google.script.host.close();' +
+    '</script></html>'
+  )
+  .setWidth(10)
+  .setHeight(10);
+
+  SpreadsheetApp.getUi().showModalDialog(html, "Connecting...");
+}
+
+function openSuccessPrompt(e) {
+  const html = HtmlService.createHtmlOutput(
+    '<!DOCTYPE html>' +
+    '<html>' +
+    '  <head>' +
+    '    <base target="_top" />' +
+    '    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>' +
+    '  </head>' +
+    '  <body class="overflow-hidden">' +
+    '    <div class="w-[500px] p-12">' +
+    '      <main class="flex w-full flex-col text-sm items-center">' +
+    '        <p class="text-6xl h-6 -translate-y-8">🎉</p>' +
+    '        <p>&nbsp;</p>' +
+    '        <p>Your webhook is now active and ready to use.</p>' +
+    '        <p>&nbsp;</p>' +
+    '        <p>To connect, go to the toolbar and select:<p>' +
+    '        <p><strong>Kondo Webhook</strong> → <strong>Connect to Kondo</strong></p>' +
+    '        <p>&nbsp;</p>' +
+    '        <button class="ml-auto w-fit rounded-md bg-blue-500 px-4 py-2 font-medium text-white shadow-md transition duration-150 ease-in-out hover:bg-blue-700" onclick="google.script.host.close()">OK</button>' +
+    '      </main>' +
+    '    </div>' +
+    '  </body>' +
+    '</html>'
+  )
+  .setWidth(500)
+  .setHeight(240);
+
+  SpreadsheetApp.getUi().showModalDialog(html, "　");
+}
+
+function getWebhookUrl() {
+  return "__WEBHOOK_URL__";
+}
+
+function addMenuAuth() {
+  SpreadsheetApp.getUi()
+    .createMenu("Kondo Webhook")
+    .addItem("Activate", "openAuthPrompt")
+    .addToUi();
+}
+
+function addMenuConnect() {
+  SpreadsheetApp.getUi()
+    .createMenu("Kondo Webhook")
+    .addItem("Connect to Kondo", "openConnectPrompt")
+    .addToUi();
+}
+
+function doPost(e) {
+  // Use LockService to handle concurrent access
+  const lock = LockService.getScriptLock();
+
+  try {
+    // Set max lock time for 180 seconds
+    lock.tryLock(180000);
+
+    // Parse the incoming JSON
+    const payload = JSON.parse(e.postData.contents);
+    const records = Array.isArray(payload) ? payload.map((p) => p.data) : [payload.data];
+
+    // Open the active sheet
+    const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+
+    records.forEach((record) => {
+      // Flatten data
+      if (Array.isArray(record.kondo_labels)) {
+        record.kondo_labels.forEach((label) => {
+          record["label_" + label.kondo_label_name + "_added_at"] = label.kondo_labeled_at ?? "";
+        });
+
+        record.kondo_labels = record.kondo_labels.map(label => label.kondo_label_name).join(", ");
+      }
+
+      // Handle header row
+      const keys = Object.keys(record);
+      if (sheet.getLastRow() === 0) {
+        sheet.appendRow(keys);
+      }
+
+      const headers = sheet
+        .getRange(1, 1, 1, sheet.getLastColumn())
+        .getValues()[0];
+
+      // Ensure all headers exist
+      keys.forEach((key) => {
+        if (headers.includes(key)) return;
+        headers.push(key);
+      });
+
+      const headerRange = sheet.getRange(1, 1, 1, headers.length);
+      headerRange.setValues([headers]);
+      headerRange.setFontWeight("bold");
+
+      // Update properties list
+      headers
+        .filter((key) => key.startsWith("label_") && key.endsWith("_added_at"))
+        .forEach((key) => {
+          if (keys.includes(key)) return;
+          keys.push(key);
+        });
+
+      // Handle sheet update
+      const idColumnIndex = headers.indexOf("contact_linkedin_uid");
+      if (idColumnIndex === -1) {
+        throw new Error("'contact_linkedin_uid' column not found in the sheet.");
+      }
+
+      const connectionColumnIndex = headers.indexOf("contact_connected_by");
+      if (connectionColumnIndex === -1) {
+        throw new Error("'contact_connected_by' column not found in the sheet.");
+      }
+
+      const last = Math.max(sheet.getLastRow() - 1, 1);
+      const ids = sheet.getRange(2, idColumnIndex + 1, last).getValues().flat();
+      const connections = sheet.getRange(2, connectionColumnIndex + 1, last).getValues().flat();
+      const row = Array(last + 1)
+        .fill(null)
+        .findIndex((_, i) => ids[i] == record.contact_linkedin_uid && connections[i] == record.contact_connected_by) + 2;
+
+      const rowEnd = ids[0] ? ids.length + 2 : 2;
+      const rowTarget = row === 1 ? rowEnd : row;
+
+      keys.forEach((key) => {
+        const columnIndex = headers.indexOf(key);
+        if (columnIndex === -1) return;
+        const value = record[key];
+        sheet.getRange(rowTarget, columnIndex + 1).setValue(value);
+      });
+    });
+
+    return ContentService.createTextOutput(
+      JSON.stringify({ status: "success", message: "Done" }),
+    ).setMimeType(ContentService.MimeType.JSON);
+  } catch (error) {
+    // Return an error response
+    return ContentService.createTextOutput(
+      JSON.stringify({ status: "error", message: error.message }),
+    ).setMimeType(ContentService.MimeType.JSON);
+  } finally {
+    lock.releaseLock();
+  }
+}
+```
+
+### Deploy the script
+
+* Click deploy, and select type Web app
+
+* Set execute as to "me" and who has access to "anyone"
+
+* Copy the URL
+
+![](/CleanShot2025-03-03at19.05.39.png)
+
+### Refresh and activate
+
+Go back to your Google Sheet and <u>refresh the page</u>. You will see a new button 'Kondo Webhook'. Click Activate
+
+![](/CleanShot2025-03-03at19.07.17.png)
+
+### Paste the webhook destination in Kondo
+
+Go to [https://app.trykondo.com/webhooks/new](https://app.trykondo.com/webhooks/new) and paste the URL you copied from the Apps Script
+
+Select your update preferences
+
+* general-update checked: will update the sheet every time there is a change in Kondo e.g. new messages sent, received, labels or notes updated etc.
+
+* general-update un-checked: will only update the sheet upon manual triggering of sync
+
+Click "test then save"
+
+### Manually trigger a sync&#x20;
+
+Once you have at least 1 destination set up, you can trigger a sync by selecting a few rows and clicking the ⚡ button or with Cmd + K > Sync
+
+![](/CleanShot2025-03-03at19.10.25.png)
+
+###
