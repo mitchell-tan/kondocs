@@ -19,9 +19,12 @@
       "pages": [
         "quickstart",
         "getting-started/change-login",
-        "getting-started/sharing-access"
-      ]
-    }
+        "getting-started/sharing-access"    
+        ]
+    },
+    {
+      "group": "Archiving"
+    } 
     ]
   },
     "global": {
