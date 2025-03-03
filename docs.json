@@ -38,20 +38,18 @@
       ]
   },
   "logo": {
-    "light": "/Kondo Logo.png",
-    "dark": "/logo/dark.svg"
+    "light": "/kondodocs.png"
   },
   "navbar": {
-    "name": "Docs",
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Contact Us",
+        "href": "mailto:mitchell@trykondo.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Back to Kondo",
+      "label": "Open App",
       "href": "https://app.trykondo.com"
     }
   },
