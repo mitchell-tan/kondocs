@@ -7,7 +7,7 @@
     "light": "#FFFFFF",
     "dark": "#000000"
   },
-  "favicon": "/kondosquare.svg",
+  "favicon": "kondosq.png",
   "appearance": {
     "default": "light",
     "strict": true
@@ -19,8 +19,9 @@
       "group": "Getting Started",
       "pages": [
         "start-here",
-        "desktop-app",
-        "cmd-k"
+        "inbox-zero",
+        "cmd-k",
+        "desktop-app"        
         ]
     },
     {
@@ -33,15 +34,15 @@
     {
       "group": "Archiving",
       "pages": [
-        "archiving/goto",
-        "archiving/cleanup"
+        "archive",
+        "cleanup"
       ]
     } 
     ]
   },
   "logo": {
     "light": "kondodocs.svg",
-    "dark": "/kondodocslogo.png"
+    "dark": "kondodocs.svg"
   },
   "navbar": {
     "links": [
