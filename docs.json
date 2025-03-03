@@ -47,15 +47,16 @@
     {
       "group": "Labelling",
       "pages": [
-        "new-connections",
+        "label-icons"
+        "label-groups",
         "label-then-archive"
       ]
     },
     {
       "group": "Messaging",
       "pages": [
-        "label-icons",
-        "multiple-labels"
+        "new-connections",
+        "voice-notes"
       ]
     },
     {
