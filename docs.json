@@ -12,25 +12,11 @@
     "default": "light",
     "strict": true
   }, 
-  "navigation": 
-     "navigation": {
-    "groups": [
-      {
-        "group": "Getting Started",
-        "pages": [
-          "essentials/code",
-          {
-            "group": "Editing",
-            "icon": "pen-paintbrush",
-            "pages": ["essentials/images", "essentials/markdown"]
-          }
-        ]
-      },
-      {
-        "group": "Writing Content",
-        "pages": ["essentials/settings"]
-      }
-    ]
+  "navigation": {
+    "pages": [
+        "essentials/images",
+        "essentials/markdown"
+      ]    
   },
     "global": {
       "anchors": [
