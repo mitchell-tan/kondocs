@@ -18,8 +18,9 @@
     {
       "group": "Getting Started",
       "pages": [
-        "getting-started/change-login",
-        "getting-started/sharing-access"    
+        "start-here",
+        "share-access",
+        "change-login"
         ]
     },
     {
