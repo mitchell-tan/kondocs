@@ -23,7 +23,7 @@
         ]
     },
     {
-      "group": "Archiving"
+      "group": "Archiving",
       "pages": [
         "archiving/goto",
         "archiving/cleanup"
