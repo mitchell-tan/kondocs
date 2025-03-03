@@ -19,6 +19,13 @@
       "group": "Getting Started",
       "pages": [
         "start-here",
+        "desktop-app",
+        "cmd-k"
+        ]
+    },
+    {
+      "group": "Access",
+      "pages": [
         "share-access",
         "change-login"
         ]
