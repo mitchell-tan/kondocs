@@ -38,8 +38,8 @@
       ]
   },
   "logo": {
-    "light": "/kondodocs.png",
-    "dark": "/kondodocs.png"
+    "light": "/kondodocslogo.png",
+    "dark": "/kondodocslogo.png"
   },
   "navbar": {
     "links": [
