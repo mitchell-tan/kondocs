@@ -13,7 +13,7 @@
     "strict": true
   }, 
   "navigation": {
-    "pages":start-here,
+    "pages": "start-here",
     "groups": [
     {
       "group": "Getting Started",
