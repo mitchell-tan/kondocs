@@ -47,6 +47,13 @@
     {
       "group": "Labelling",
       "pages": [
+        "new-connections",
+        "label-then-archive"
+      ]
+    },
+    {
+      "group": "Messaging",
+      "pages": [
         "label-icons",
         "multiple-labels"
       ]
