@@ -38,7 +38,7 @@
       ]
   },
   "logo": {
-    "light": "/kondodocslogo.png",
+    "light": "logo/light.svg",
     "dark": "/kondodocslogo.png"
   },
   "navbar": {
