@@ -34,8 +34,14 @@
     {
       "group": "Archiving",
       "pages": [
-        "archive",
+        "archiving",
         "cleanup"
+      ]
+    },
+   {
+      "group": "Reminders",
+      "pages": [
+        "reminders"
       ]
     },
     {
