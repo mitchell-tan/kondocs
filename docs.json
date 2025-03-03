@@ -47,7 +47,7 @@
     {
       "group": "Labelling",
       "pages": [
-        "label-icons"
+        "label-icons",
         "label-groups",
         "label-then-archive"
       ]
