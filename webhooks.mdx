@@ -3,23 +3,37 @@ title: "Webhooks"
 ---
 
 <Info>
-  Note that webhooks are in beta and will be launched as part of our new Business Tier in mid-March
+  Note that webhooks are in beta and will be launched as part of our new Business Tier in March
 </Info>
 
 You can push data on your LinkedIn conversations from Kondo to your own systems using webhooks.
 
-To set up webhooks, simply go to [app.trykondo.com/webhooks](http://app.trykondo.com/webhooks)
+To set up webhooks, simply go to [app.trykondo.com/webhooks](http://app.trykondo.com/webhooks) or look for the ⚡ button in the bottom right menu
+
+![](/CleanShot2025-03-04at18.07.05.png)
 
 ### When we post data
 
-There are two ways to trigger events posting to your webhook destination.
+There are two ways you can trigger syncs: streaming, and manual
 
-1. Streaming — selecting ‘general-update’ will fire events every time a change happens in Kondo e.g. receive new message, send new message, archive, change label, change notes, etc. etc.
+* streaming: will update the sheet every time there is a change in Kondo e.g. new messages sent, received, labels or notes updated etc.
 
-2. Manual — unselect 'general-update' to only fire events when you manually select conversations and syncAfter you create your first webhook destination, you will see a sync ⚡ button at the top of each chat or when selecting conversations in the inbox with the checkboxes
+* manual: will only update the sheet upon manual triggering of sync
 
-   ![](/CleanShot2025-03-03at18.55.52.png)
+  ![](/CleanShot2025-03-04at18.10.31.png)
 
 ### What kind of data we post
 
 You can see a sample of the data we post in [app.trykondo.com/webhooks/new](http://app.trykondo.com/webhooks/new)
+
+<Info>
+  Kondo syncs conversation history in two ways&#x20;
+
+  1. latest message: this is synced in streaming mode or when you trigger syncs in the inbox list
+
+  2. entire conversation: this is synced ONLY when you trigger a sync within an individual conversation
+
+  these are separate fields in the payload sent&#x20;
+
+
+</Info>
