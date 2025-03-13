@@ -62,6 +62,7 @@
     {
       "group": "Integrations",
       "pages": [
+        "integrations",
         "webhooks",
         "zapier",
         "notion",
