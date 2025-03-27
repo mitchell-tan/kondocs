@@ -28,7 +28,6 @@
       "group": "Access",
       "pages": [
         "share-access",
-        "change-login",
         "multiple-accounts",
         "reset"
         ]
