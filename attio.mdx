@@ -21,9 +21,9 @@ Create a new workflow in Attio and select the trigger type "Receive Webhook"
 
 ### Step 3: Parse JSON
 
-Add a step Parse JSON, and create one field for each type of data you want to sync from Kondo to Attio.
+Add a step Parse JSON, and decide which fields you want to sync from Kondo to Attio, then add them
 
-Use these path names to get the right data from Kondo, and give them whatever Alias you want
+Use these path names to get the right data from Kondo.
 
 - data.contact_first_name
 - data.contact_last_name
@@ -46,9 +46,15 @@ Use these path names to get the right data from Kondo, and give them whatever Al
 - data.kondo_labels[0].kondo_label_name (_<u>note: this gives you the first label in Kondo if you have multiple, add additional fields and map it to another path with the number [0] to 1,2,3, etc.</u>_)
 - data.kondo_labels[0].kondo_labeled_at
 
+Add Alias names for each of the fields
+
 ### Step 4: Find record
 
-Find a matching record in Attio to update. Note that for this to work well, your records in Attio need to already have a Linkedin URL.
+Find a matching record in Attio to update. 
+
+Filter -\> LinkedIn -\> contains -\> {kondo LinkedIn Handle}
+
+Note that for this to work well, your records in Attio need to already have a Linkedin URL.
 
 If you don't have this set up, you can use First Name / Last Name to get an approximate match
 
