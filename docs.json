@@ -66,6 +66,7 @@
         "integrations",
         "webhooks",
         "zapier",
+        "make",
         "notion",
         "sheets",
         "attio",
