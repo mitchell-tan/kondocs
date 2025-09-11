@@ -1,0 +1,45 @@
+---
+title: "Salesforce"
+---
+
+Integrating Kondo with Salesforce will allow you to automatically log DMs as completed tasks on matching Lead records. Each message sent back and forth will be logged as a completed task.
+
+![CleanShot 2025-09-11 at 11.26.05.png](/images/CleanShot2025-09-11at11.26.05.png)
+
+### Step 1: Install Package
+
+Kondo connects to Salesforce via a managed package. To install this package, you will need admin rights. 
+
+Install the Kondo App in Salesforce at this link: https://login.salesforce.com/packaging/installPackage.apexp?p0=04tgK0000005HeX
+
+### Step 2: Open the Kondo App
+
+![CleanShot 2025-09-11 at 11.22.26.png](/images/CleanShot2025-09-11at11.22.26.png)
+
+### Step 3: Follow the instructions in the app 
+
+- Create a new Site
+- Grant required permissions 
+
+### Step 3: Configure your matching strategy
+
+- Choose how you want us to match records in Kondo to Leads in Salesforce:
+  - LinkedIn URL (recommended)
+  - Fuzzy name match
+  - Exact name match
+- Choose if you want to create Lead objects if no matching records are found 
+- Click 'Save'
+
+### Step 4: Connect to Kondo
+
+Paste the site domain you generated in Step 3 into the Site URL field and click Generate
+
+Then click "Connect to Kondo". You will be redirected to the integrations page in Kondo:
+
+![CleanShot 2025-09-11 at 11.28.02.png](/images/CleanShot2025-09-11at11.28.02.png)
+
+Click 'Test then Save'.
+
+If you want to enable this integration for all members of your team, click 'Share with team'. It will automatically connect all the users in your Kondo workspace to this integration.
+
+To add more team members to Kondo, go to Settings -\> Team -\> Invite
