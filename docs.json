@@ -33,16 +33,11 @@
         ]
     },
     {
-      "group": "Archiving",
+      "group": "Inbox management",
       "pages": [
         "archiving",
+        "reminders",        
         "cleanup"
-      ]
-    },
-   {
-      "group": "Reminders",
-      "pages": [
-        "reminders"
       ]
     },
     {
