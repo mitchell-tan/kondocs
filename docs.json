@@ -20,13 +20,13 @@
       "pages": [
         "start-here",
         "inbox-zero",
-        "cmd-k",
-        "desktop-app"        
+        "cmd-k"
         ]
     },
     {
       "group": "Access",
       "pages": [
+        "desktop-app",
         "share-access",
         "multiple-accounts",
         "reset"
@@ -46,6 +46,14 @@
       "pages": [
         "new-connections",
         "voice-notes"
+      ]
+    },
+      {
+      "group": "Team",
+      "pages": [
+        "team-invite",
+        "team-snippets",
+        "team-integrations"
       ]
     },
     {
