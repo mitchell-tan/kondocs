@@ -36,16 +36,9 @@
       "group": "Inbox management",
       "pages": [
         "archiving",
-        "reminders",        
+        "reminders",  
+        "labels",
         "cleanup"
-      ]
-    },
-    {
-      "group": "Labelling",
-      "pages": [
-        "label-icons",
-        "multi-label",
-        "label-then-archive"
       ]
     },
     {
