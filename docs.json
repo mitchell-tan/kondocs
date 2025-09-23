@@ -32,15 +32,6 @@
         "reset"
         ]
     },
-      {
-      "group": "Team",
-      "pages": [
-        "team-invite",
-        "team-snippets",
-        "team-integrations",
-        "team-analytics"
-      ]
-    },
     {
       "group": "Inbox management",
       "pages": [
@@ -51,10 +42,20 @@
       ]
     },
     {
-      "group": "Messaging",
+      "group": "Sending messages",
       "pages": [
         "new-connections",
+        "snippets",
         "voice-notes"
+      ]
+    },
+      {
+      "group": "Team",
+      "pages": [
+        "team-invite",
+        "team-snippets",
+        "team-integrations",
+        "team-analytics"
       ]
     },
     {
