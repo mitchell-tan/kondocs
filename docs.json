@@ -85,6 +85,10 @@
   "navbar": {
     "links": [
       {
+        "label": "Changelog",
+        "href": "https://docs.trykondo.com/changelog"
+      },
+      {
         "label": "Contact Us",
         "href": "https://www.trykondo.com/contact"
       }
