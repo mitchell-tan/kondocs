@@ -85,7 +85,7 @@
   "navbar": {
     "links": [
       {
-        "label": "Changelog",
+        "label": "📮 Changelog",
         "href": "https://docs.trykondo.com/changelog"
       },
       {
