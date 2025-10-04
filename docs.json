@@ -13,6 +13,7 @@
     "strict": true
   }, 
   "navigation": {
+    "pages": "changelog",
     "pages": "start-here",
     "groups": [
     {
