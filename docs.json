@@ -96,7 +96,7 @@
     ],
     "primary": {
       "type": "button",
-      "label": "Open App",
+      "label": "Get Started",
       "href": "https://app.trykondo.com"
     }
   },
