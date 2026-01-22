@@ -1,4 +1,26 @@
 ---
-title: 'attio-integration'
+title: "Attio Integration"
 ---
 
+### Overview
+
+The Kondo \<\> Attio integration allows you to
+
+- Sync DMs to the People activity feed as notes
+- Sync fields from Kondo such as labels, notes, and URL to Attio People properties
+- Add links to Attio and other Attio fields to the Kondo side panel
+
+### Configuration
+
+1. To connect Kondo to HubSpot, go to Settings -\> Integrations -\> Attio or click [this link](https://app.trykondo.com/integrations/hubspot) to connect and authenticate with an Attio admin account
+2. Configure mapping for Kondo -\> Attio
+
+   ![Clean Shot 2026 01 22 At 08 16 23](/images/CleanShot2026-01-22at08.16.23.png)
+   - We map records in Kondo to Attio records by using the contact's LinkedIn URL as an identifier.
+   - Toggle 'Sync Messages' if you want to add DMs as Notes to the activity feed. If you leave this toggled off, only fields will sync.
+   - Toggle 'Sync Contacts' if you want new Contacts to be created if one with a matching LinkedIn URL is not found.
+   - Edit optional field mapping below if you want to map other Kondo properties to your own Attio custom fields
+3. Configure fields to pull from Attio -\> Kondo
+
+   ![Clean Shot 2026 01 22 At 08 17 06](/images/CleanShot2026-01-22at08.17.06.png)
+   - Kondo will display a link to the matching Attio contact in the right side panel by default. You can optionally add additional fields to pull from Attio people records into the Kondo side panel.
