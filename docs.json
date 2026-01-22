@@ -13,70 +13,69 @@
     "strict": true
   }, 
   "navigation": {
-    "pages": "changelog",
-    "pages": "start-here",
     "groups": [
-    {
-      "group": "Getting Started",
-      "pages": [
-        "start-here",
-        "inbox-zero",
-        "cmd-k",
-        "shortcuts",
-        "sales-nav"
-        ]
-    },
-    {
-      "group": "Access",
-      "pages": [
-        "desktop-app",
-        "share-access",
-        "multiple-accounts",
-        "reset"
-        ]
-    },
-    {
-      "group": "Inbox management",
-      "pages": [
-        "archiving",
-        "reminders",  
-        "labels",
-        "cleanup"
-      ]
-    },
-    {
-      "group": "Sending messages",
-      "pages": [
-        "new-connections",
-        "snippets",
-        "voice-notes"
-      ]
-    },
       {
-      "group": "Team",
-      "pages": [
-        "team-invite",
-        "team-snippets",
-        "team-integrations",
-        "team-analytics"
-      ]
-    },
-    {
-      "group": "Integrations",
-      "pages": [
-        "integrations",
-        "webhooks",
-        "zapier",
-        "make",
-        "notion",
-        "sheets",
-        "salesforce",
-        "hubspot",
-        "attio",
-        "clarify",
-        "clay"
-      ]
-    }
+        "group": "Getting Started",
+        "pages": [
+          "start-here",
+          "inbox-zero",
+          "cmd-k",
+          "shortcuts",
+          "sales-nav"
+        ]
+      },
+      {
+        "group": "Access",
+        "pages": [
+          "desktop-app",
+          "share-access",
+          "multiple-accounts",
+          "reset"
+        ]
+      },
+      {
+        "group": "Inbox management",
+        "pages": [
+          "archiving",
+          "reminders",
+          "labels",
+          "cleanup"
+        ]
+      },
+      {
+        "group": "Sending messages",
+        "pages": [
+          "new-connections",
+          "snippets",
+          "voice-notes"
+        ]
+      },
+      {
+        "group": "Team",
+        "pages": [
+          "team-invite",
+          "team-snippets",
+          "team-integrations",
+          "team-analytics"
+        ]
+      },
+      {
+        "group": "Integrations",
+        "pages": [
+          "integrations",
+          "webhooks",
+          "zapier",
+          "make",
+          "notion",
+          "sheets",
+          "salesforce",
+          "hubspot",
+          "hubspot-copied-1",
+          "attio",
+          "clarify",
+          "clay"
+        ]
+      }
     ]
   },
   "logo": {
