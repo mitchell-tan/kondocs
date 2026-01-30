@@ -16,6 +16,9 @@ The Kondo \<\> HubSpot integration allows you to
 2. Configure mapping for Kondo -\> HubSpot
    - We map records in Kondo to HubSpot records by using the contact's LinkedIn URL as an identifier.
    - Toggle 'Sync Messages' if you want to add DMs to the activity feed. If you leave this toggled off, only fields will sync.
+     - **Note on message syncing:**
+       - New messages sent or received while Kondo is open will sync to a LinkedIn message object in the HubSpot activity feed. If you leave Kondo and return later, only the latest / newest message will sync 
+       - In addition, Kondo will create a Note in the HubSpot contact record with the entire history of the conversation. This note will update automatically whenever you step into a chat in Kondo
    - Toggle 'Sync Contacts' if you want new Contacts to be created if one with a matching LinkedIn URL is not found.
    - Edit optional field mapping below if you want to map other Kondo properties to your own HubSpot custom fields
 
